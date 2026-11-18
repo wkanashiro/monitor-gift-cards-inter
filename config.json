@@ -1,0 +1,47 @@
+{
+  "min_cashback_percent": 3,
+  "notify_mode": "above_threshold",
+  "brands": [
+    {
+      "label": "Uber",
+      "keywords": ["uber"]
+    },
+    {
+      "label": "Pague Menos",
+      "keywords": ["pague menos"]
+    },
+    {
+      "label": "Petz",
+      "keywords": ["petz"]
+    },
+    {
+      "label": "Google Play (Google Pay)",
+      "keywords": ["google play", "google pay"]
+    },
+    {
+      "label": "App Store (Apple Store)",
+      "keywords": ["app store", "apple store"]
+    },
+    {
+      "label": "Outback",
+      "keywords": ["outback"]
+    },
+    {
+      "label": "Assaí",
+      "keywords": ["assai"]
+    },
+    {
+      "label": "Carrefour",
+      "keywords": ["carrefour"],
+      "exclude_keywords": ["drogaria"]
+    },
+    {
+      "label": "Atacadão",
+      "keywords": ["atacadao"]
+    },
+    {
+      "label": "Shopee",
+      "keywords": ["shopee"]
+    }
+  ]
+}

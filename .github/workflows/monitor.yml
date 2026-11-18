@@ -1,0 +1,36 @@
+name: Monitor Gift Cards Inter
+
+on:
+  schedule:
+    # Roda diariamente às 12:00 UTC (09:00 horário de Brasília)
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Executar sem enviar mensagem no Telegram"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  check-cashback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run gift card monitor
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MIN_CASHBACK: ${{ vars.MIN_CASHBACK }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: python monitor.py

@@ -2,8 +2,8 @@ name: Monitor Gift Cards Inter
 
 on:
   schedule:
-    # Roda diariamente às 12:00 UTC (09:00 horário de Brasília)
-    - cron: "0 12 * * *"
+    # Roda a cada minuto
+    - cron: "*/1 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:

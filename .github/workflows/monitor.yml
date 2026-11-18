@@ -2,15 +2,8 @@ name: Monitor Gift Cards Inter
 
 on:
   schedule:
-    # Roda a cada minuto
-    - cron: "*/1 * * * *"
-  workflow_dispatch:
-    inputs:
-      dry_run:
-        description: "Executar sem enviar mensagem no Telegram"
-        required: false
-        default: false
-        type: boolean
+    - cron: "0 12 * * *" # Executa todos os dias às 12:00 UTC
+  workflow_dispatch:      
 
 permissions:
   contents: read
